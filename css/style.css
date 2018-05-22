@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: rgba(0,0,0,0.87);
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+input {
+    border: 1px solid rgba(0,0,0,0.2);
+    font: inherit;
+    color: inherit;
+    padding: 8px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.site {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.directory ul {
+    margin: 0 -20px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.directory li {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    transition: box-shadow .2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+}
+
+.user__avatar {
+    border-radius: 50%;
+    display: block;
+    align-self: flex-start;
+}
+
+.card .user__avatar {
+    margin-right: 20px;
+}
+
+.user__info {
+    align-self: center;
+    color: rgba(0,0,0,0.54);
+    overflow: hidden;
+}
+
+.user__name {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.87);
+}
+
+.user__mail {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.dialog {
+    color: rgba(0,0,0,0.54);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.dialog.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dialog__card {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+    width: 90%;
+    max-width: 460px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: transform .3s;
+    transform: translate3d(0, -50px, 0);
+    overflow: hidden;
+}
+
+.active .dialog__card {
+    transform: translate3d(0, 0, 0);
+}
+
+.dialog .user__avatar {
+    margin: 24px auto;
+}
+
+.dialog__header {
+    margin: 0 0 30px;
+    padding: 0 0 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.dialog__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.dialog__controls {
+    background-color: #e8e8e8;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    margin: 50px -20px -20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+}
+
+.dialog__prev,
+.dialog__next {
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 769px) {
+    input {
+        width: 480px;
+    }
+    .site__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .directory li {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .directory li {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+}
